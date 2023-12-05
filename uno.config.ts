@@ -12,6 +12,16 @@ export default defineConfig({
     ['icon-btn', 'text-[0.9em] inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600 !outline-none'],
     ['app-border', 'b-gray-200 dark:b-gray-700 border'],
   ],
+  theme: {
+    colors: {
+      primary: '#5051F9',
+      gray: {
+        500: 'rgba(255, 255, 255, 0.40)',
+        700: '#1E1F25',
+        900: '#131517',
+      },
+    },
+  },
   presets: [
     presetUno(),
     presetAttributify(),
