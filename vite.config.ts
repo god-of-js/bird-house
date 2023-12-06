@@ -7,6 +7,7 @@ import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
+import SvgLoader from 'vite-svg-loader'
 import VueMacros from 'unplugin-vue-macros/vite'
 
 export default defineConfig({
@@ -54,6 +55,7 @@ export default defineConfig({
     // https://github.com/antfu/unocss
     // see uno.config.ts for config
     UnoCSS(),
+    SvgLoader(),
   ],
 
   // https://github.com/vitest-dev/vitest

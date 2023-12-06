@@ -11,8 +11,8 @@ const routes = [
     path: '/overview',
     component: OverviewLayout,
     children: [
-      { path: '', component: () => import('~/pages/overview/index.vue') },
-      { path: ':id', component: () => import('~/pages/overview/[id].vue') },
+      { path: '', component: () => import('~/pages/BirdHousesPage.vue') },
+      { path: 'houses/:id', component: () => import('~/pages/BirdHouseDetailsPage.vue') },
     ],
   },
   { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound },

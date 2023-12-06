@@ -11,6 +11,8 @@ const birdHouses = computed(() => appStore.birdHouses)
 
 <template>
   <div class="flex gap-6 p-9">
-    <BirdHouse v-for="(house, index) in birdHouses" :key="index" :bird-house="house" />
+    <RouterLink v-for="(house, index) in birdHouses" :key="index" :to="`/overview/houses/${house.ubidValue}`">
+      <BirdHouse :bird-house="house" />
+    </RouterLink>
   </div>
 </template>

@@ -29,7 +29,9 @@ declare module '@vue/runtime-core' {
     TheFooter: typeof import('./src/components/TheFooter.vue')['default']
     TheForm: typeof import('./src/components/TheForm.vue')['default']
     TheInput: typeof import('./src/components/TheInput.vue')['default']
+    ThePaginator: typeof import('./src/components/ThePaginator.vue')['default']
     TheSelect: typeof import('./src/components/TheSelect.vue')['default']
     TheStepper: typeof import('./src/components/TheStepper.vue')['default']
+    UiIcon: typeof import('./src/components/UiIcon.vue')['default']
   }
 }
