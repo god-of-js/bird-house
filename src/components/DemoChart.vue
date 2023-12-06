@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue'
 import Chart from 'chart.js/auto'
 
 const chartData = {
-  labels: ['Monday', 'Tuesday', 'Wednesdat', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+  labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
   datasets: [
     {
       label: '# of Votes',
@@ -29,6 +29,8 @@ const chartOptions = {
 const myChart = ref(null)
 
 onMounted(() => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
   const ctx = myChart.value?.getContext('2d')
   // eslint-disable-next-line no-new
   new Chart(ctx, {

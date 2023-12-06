@@ -60,5 +60,6 @@ function changeTab(tab: string) {
       </li>
     </ul>
     <DemoChart v-else class="w-full" />
+    <ThePaginator :current-page="1" :total-pages="5" />
   </div>
 </template>
