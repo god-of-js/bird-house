@@ -28,16 +28,16 @@ const numOfEggs = computed(() => {
       {{ props.birdHouse.name }}
     </div>
     <div class="mb-2.5 flex gap-2 text-base font-medium">
-      <UiIcon icon="Location" />
+      <TheIcon icon="Location" />
       <span>({{ props.birdHouse.longitude }}, {{ props.birdHouse.latitude }})</span>
     </div>
     <div class="flex gap-2.5 text-base">
       <div class="flex gap-2">
-        <UiIcon icon="Paw" />
+        <TheIcon icon="Paw" />
         <span>{{ numOfOccupants }}</span>
       </div>
       <div class="flex gap-2">
-        <UiIcon icon="Egg" />
+        <TheIcon icon="Egg" />
         <span>{{ numOfEggs }}</span>
       </div>
     </div>

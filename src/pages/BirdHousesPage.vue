@@ -4,8 +4,6 @@ import { useAppStore } from '~/modules'
 
 const appStore = useAppStore()
 
-appStore.getBirdHouses()
-
 const birdHouses = computed(() => appStore.birdHouses)
 </script>
 

@@ -11,7 +11,11 @@ const state: State = {
 export const useAppStore = defineStore({
   id: 'AppStore',
   state: () => (state),
-  getters: {},
+  getters: {
+    birdHouse: (state: State) => {
+      return (ubid: string) => state.birdHouses.find(({ ubidValue }) => ubid === ubidValue)
+    },
+  },
   actions: {
     getBirdHouses() {
       return Api.getBirdHouses().then(async (birdHouses) => {

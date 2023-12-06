@@ -1,5 +1,5 @@
 <template>
-  <main font-poppins class="h-screen bg-gray-900 text-white">
+  <main class="h-screen bg-gray-900 font-poppins text-white">
     <nav class="bg-gray-700 py-6 text-center">
       Shockbyte BirdHouses Admin Panel
     </nav>
