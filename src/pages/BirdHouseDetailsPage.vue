@@ -3,7 +3,7 @@ import { useAppStore } from '~/modules'
 
 const appStore = useAppStore()
 const route = useRoute()
-const activeTab = ref('overview')
+const activeTab = ref('graph')
 
 const birdHouse = computed(() => appStore.birdHouse(route.params.id as string))
 
@@ -59,5 +59,6 @@ function changeTab(tab: string) {
         </div>
       </li>
     </ul>
+    <DemoChart v-else class="w-full" />
   </div>
 </template>

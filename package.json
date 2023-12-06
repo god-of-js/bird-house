@@ -17,10 +17,12 @@
     "@vuelidate/validators": "^2.0.4",
     "@vueuse/core": "^10.1.2",
     "axios": "^1.6.2",
+    "chart.js": "^4.4.1",
     "dayjs": "^1.11.9",
     "pinia": "^2.1.7",
     "vite-svg-loader": "^5.1.0",
     "vue": "^3.3.4",
+    "vue-chartjs": "^5.2.0",
     "vue-router": "^4.2.2"
   },
   "devDependencies": {
