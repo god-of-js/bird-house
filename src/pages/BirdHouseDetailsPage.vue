@@ -20,6 +20,9 @@ const tabs = [
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString('en-GB')
 }
+function changeTab(tab: string) {
+  activeTab.value = tab
+}
 </script>
 
 <template>
@@ -34,14 +37,14 @@ function formatDate(dateStr: string) {
           <span>({{ birdHouse?.longitude }}, {{ birdHouse?.latitude }})</span>
         </div>
       </div>
-      <TheTabs :tabs="tabs" :active-tab="activeTab">
+      <TheTabs :tabs="tabs" :active-tab="activeTab" @change-tab="changeTab">
         <template #graph>
           <span>Graph</span>
         </template>
       </TheTabs>
     </header>
 
-    <ul class="grid max-h-[65vh] gap-4 overflow-y-auto p-0 pt-6">
+    <ul v-if="activeTab === 'overview'" class="grid max-h-[65vh] gap-4 overflow-y-auto p-0 pt-6">
       <li v-for="(occupant, index) in birdHouse?.occupancy" :key="index" class="flex gap-9 rounded-xl bg-gray-700 px-5 py-6">
         <span>{{ formatDate(occupant.created_at) }}</span>
         <div class="flex gap-2.5 text-base">

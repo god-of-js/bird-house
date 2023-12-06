@@ -20,6 +20,7 @@ const emit = defineEmits<{ (e: 'change-tab', val: string): void }>()
       :class="props.activeTab === tab.key ? 'border-primary text-primary' : 'border-transparent'"
       tabindex="1"
       @click="emit('change-tab', tab.key)"
+      @keydown.enter="emit('change-tab', tab.key)"
     >
       <!-- Using a slot incase of icons -->
       <slot :name="tab.key">
