@@ -10,6 +10,7 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppSidebar: typeof import('./src/components/AppSidebar.vue')['default']
+    BirdHouse: typeof import('./src/components/BirdHouse.vue')['default']
     CalendarWidget: typeof import('./src/components/CalendarWidget.vue')['default']
     CalendarWidgetDayItem: typeof import('./src/components/CalendarWidgetDayItem.vue')['default']
     CalendarWidgetMonthNavigator: typeof import('./src/components/CalendarWidgetMonthNavigator.vue')['default']

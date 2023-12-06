@@ -1,5 +1,6 @@
 import IndexPage from '~/pages/IndexPage.vue'
 import OverviewLayout from '~/layouts/OverviewLayout.vue'
+import NotFound from '~/pages/NotFound.vue'
 
 const routes = [
   {
@@ -14,6 +15,7 @@ const routes = [
       { path: ':id', component: () => import('~/pages/overview/[id].vue') },
     ],
   },
+  { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound },
 ]
 
 export default routes
