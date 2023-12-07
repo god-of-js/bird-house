@@ -8,7 +8,7 @@ interface Props {
   activeTab: string
 }
 const props = defineProps<Props>()
-const emit = defineEmits<{ (e: 'change-tab', val: string): void }>()
+const emit = defineEmits<{ (e: 'changeTab', val: string): void }>()
 </script>
 
 <template>
@@ -19,8 +19,9 @@ const emit = defineEmits<{ (e: 'change-tab', val: string): void }>()
       class="cursor-pointer border-b-2 px-2 pb-3 text-base font-normal text-gray-500 hover:border-primary hover:text-primary"
       :class="props.activeTab === tab.key ? 'border-primary text-primary' : 'border-transparent'"
       tabindex="1"
-      @click="emit('change-tab', tab.key)"
-      @keydown.enter="emit('change-tab', tab.key)"
+      :data-testid="`${tab.key}`"
+      @click="emit('changeTab', tab.key)"
+      @keydown.enter="emit('changeTab', tab.key)"
     >
       <!-- Using a slot incase of icons -->
       <slot :name="tab.key">

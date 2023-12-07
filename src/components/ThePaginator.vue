@@ -70,19 +70,28 @@ function changePage(item: number | string, itemIndex: number) {
 
 <template>
   <div class="absolute bottom-0 left-0 right-0 flex flex items-center justify-center gap-4 bg-gray-700 p-3.5">
-    <button :disabled="props.currentPage === 1" @click="emit('changePage', props.currentPage - 1)">
+    <button
+      :disabled="props.currentPage <= 1"
+      data-testid="prev-btn"
+      @click="emit('changePage', props.currentPage - 1)"
+    >
       <TheIcon icon="CaretLeft" />
     </button>
     <button
       v-for="(item, index) in visibleItems"
       :key="index"
       class="rounded-md px-3 py-1 hover:bg-primary"
+      :data-testid="`item-${item}-${index}`"
       :class="{ 'bg-primary': item === props.currentPage }"
       @click="changePage(item, index)"
     >
       {{ item }}
     </button>
-    <button :disabled="props.currentPage === props.totalPages" @click="emit('changePage', props.currentPage + 1)">
+    <button
+      :disabled="props.currentPage >= props.totalPages"
+      data-testid="next-btn"
+      @click="emit('changePage', props.currentPage + 1)"
+    >
       <TheIcon icon="CaretRight" />
     </button>
   </div>
