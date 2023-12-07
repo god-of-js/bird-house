@@ -3,11 +3,13 @@ import { useAppStore } from '~/modules'
 
 const appStore = useAppStore()
 const route = useRoute()
-const activeTab = ref('graph')
+type Tab = 'overview' | 'graph'
+const activeTab = ref<Tab>('overview')
+const activePage = ref(1)
 
 const birdHouse = computed(() => appStore.birdHouse(route.params.id as string))
 
-const tabs = [
+const tabs: { label?: string; key: Tab }[] = [
   {
     label: 'Overview',
     key: 'overview',
@@ -21,7 +23,10 @@ function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString('en-GB')
 }
 function changeTab(tab: string) {
-  activeTab.value = tab
+  activeTab.value = tab as Tab
+}
+function changePage(page: number) {
+  activePage.value = page
 }
 </script>
 
@@ -60,6 +65,6 @@ function changeTab(tab: string) {
       </li>
     </ul>
     <DemoChart v-else class="w-full" />
-    <ThePaginator :current-page="1" :total-pages="5" />
+    <ThePaginator :current-page="activePage" :total-pages="50" @change-page="changePage" />
   </div>
 </template>
