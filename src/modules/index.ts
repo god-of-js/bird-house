@@ -17,8 +17,8 @@ export const useAppStore = defineStore({
     },
   },
   actions: {
-    getBirdHouses() {
-      return Api.getBirdHouses().then(async (birdHouses) => {
+    getBirdHouses(page = 1, limit = 20) {
+      return Api.getBirdHouses(page, limit).then(async (birdHouses) => {
         this.birdHouses = await Promise.all(birdHouses.map(async (house) => {
           const occupancy = await this.getOccupancy(house.ubidValue)
           return { ...house, occupancy }

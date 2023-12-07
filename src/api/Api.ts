@@ -8,8 +8,8 @@ const instance = axios.create({
 })
 
 class Api {
-  getBirdHouses() {
-    return this.get<{ items: { birdhouse: BirdHouse }[] }>('/registration').then(({ items }) => items.map(({ birdhouse }) => birdhouse))
+  getBirdHouses(page: number, limit: number) {
+    return this.get<{ items: { birdhouse: BirdHouse }[] }>(`/registration?page=${page}&limit=${limit}`).then(({ items }) => items.map(({ birdhouse }) => birdhouse))
   }
 
   getOccupancy(ubid: string) {

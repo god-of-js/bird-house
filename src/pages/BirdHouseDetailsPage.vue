@@ -28,6 +28,11 @@ function changeTab(tab: string) {
 function changePage(page: number) {
   activePage.value = page
 }
+
+function fetchBirdHouses(page: number) {
+  appStore.getBirdHouses(page)
+}
+watch(() => activePage.value, fetchBirdHouses)
 </script>
 
 <template>

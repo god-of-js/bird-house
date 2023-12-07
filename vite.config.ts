@@ -41,9 +41,6 @@ export default defineConfig({
         '@vueuse/core',
       ],
       dts: true,
-      dirs: [
-        './src/composables',
-      ],
       vueTemplate: true,
     }),
 

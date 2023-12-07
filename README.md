@@ -1,88 +1,55 @@
-<p align='center'>
-  <img src='https://user-images.githubusercontent.com/11247099/111864893-a457fd00-899e-11eb-9f05-f4b88987541d.png' alt='Vitesse - Opinionated Vite Starter Template' width='600'/>
-</p>
+# Birdhouse App: A Feathered Venture into Code Nesting
 
-<h6 align='center'>
-<a href="https://vitesse-lite.netlify.app/">Live Demo</a>
-</h6>
+In the bustling realm of software engineering, I found myself in an unexpected haven—building an application for housing birds. This unique endeavor led me to craft the Birdhouse App, a project that not only provides shelter for our feathered friends but also embraces sound architectural practices and thoughtful design decisions.
 
-<h5 align='center'>
-<b>Lightweight version of <a href="https://github.com/antfu/vitesse">Vitesse</a></b>
-</h5>
+## How to run the project
 
-<br>
+It is advised to use `pnpm` to avoid dependency issues.
+To run this project use the command
 
-<p align='center'>
-<b>English</b> | <a href="https://github.com/antfu/vitesse-lite/blob/main/README.zh-CN.md">简体中文</a>
-<!-- Contributors: Thanks for geting interested, however we DON'T accept new transitions to the README, thanks. -->
-</p>
-
-## Features
-
-- ⚡️ [Vue 3](https://github.com/vuejs/core), [Vite 3](https://github.com/vitejs/vite), [pnpm](https://pnpm.io/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
-
-- 🗂 [File based routing](./src/pages)
-
-- 📦 [Components auto importing](./src/components)
-
-- 🎨 [UnoCSS](https://github.com/antfu/unocss) - The instant on-demand atomic CSS engine.
-
-- 😃 Use icons from any icon sets in [Pure CSS](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
-
-- 🔥 Use the [new `<script setup>` style](https://github.com/vuejs/rfcs/pull/227)
-
-- ✅ Use [Vitest](http://vitest.dev/) for unit and components testing
-
-- 🦾 TypeScript, of course
-
-- ☁️ Deploy on Netlify, zero-config
-
-
-<br>
-
-See [Vitesse](https://github.com/antfu/vitesse) for full featureset.
-
-
-## Dropped Features from [Vitesse](https://github.com/antfu/vitesse)
-
-- ~~i18n~~
-- ~~Layouts~~
-- ~~SSG~~
-- ~~PWA~~
-- ~~Markdown~~
-
-## Pre-packed
-
-### UI Frameworks
-
-- [UnoCSS](https://github.com/antfu/unocss) - The instant on-demand atomic CSS engine.
-
-### Icons
-
-- [Iconify](https://iconify.design) - use icons from any icon sets [🔍Icônes](https://icones.netlify.app/)
-- [Pure CSS Icons via UnoCSS](https://github.com/antfu/unocss/tree/main/packages/preset-icons)
-
-### Plugins
-
-- [Vue Router](https://github.com/vuejs/vue-router)
-  - [`vite-plugin-pages`](https://github.com/hannoeru/vite-plugin-pages) - file system based routing
-- [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - Directly use Vue Composition API and others without importing
-- [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components) - components auto import
-- [`unplugin-vue-macros`](https://github.com/sxzz/unplugin-vue-macros) - Explore and extend more macros and syntax sugar to Vue.
-- [VueUse](https://github.com/antfu/vueuse) - collection of useful composition APIs
-
-## Try it now!
-
-### GitHub Template
-
-[Create a repo from this template on GitHub](https://github.com/antfu/vitesse-lite/generate).
-
-### Clone to local
-
-If you prefer to do it manually with the cleaner git history
-
-```bash
-npx degit antfu/vitesse-lite my-vitesse-app
-cd my-vitesse-app
-pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
 ```
+pnpm i
+pnpm run dev
+```
+
+## How to test
+
+To test the project use the command
+
+```
+pnpm run test
+```
+
+## Directories and Thought Process
+
+This section gives an explanation of certain concepts that were employed in the development of this project
+
+### API Directory: Repository-Based Patterns Soar
+
+At the heart of the application lies the API directory, where I've adopted the repository-based pattern to interact seamlessly with the backend. This approach introduces an additional layer of abstraction, enhancing readability and maintainability. A key advantage surfaces when contemplating changes in underlying technologies. For instance, transitioning from Firebase to a custom Node.js server was remarkably smooth, thanks to the clarity and separation of concerns facilitated by this pattern.
+
+### Components Directory: Iconic Flexibility
+
+The Components directory stands as a testament to modularity, housing essential components like `TheIcon.vue`. This particular component acts as a wrapper for SVG icons, providing an abstraction that simplifies the process of changing icons. A notable experience from a previous project, where a shift to a premium icon set was mandated, highlighted the convenience of altering icons in one centralized location. Embracing this wrapper component approach ensures adaptability to varying icon sets and fosters collaborative contributions.
+
+Other foundational components, such as `ThePaginator`, `TheTabs`, and `TheButton`, reside in this directory. Each of these base components undergoes rigorous testing, ensuring reliability and consistency across the application. These components were also made to adhere to the best accessibility rules like tabbing for keyboard accessibility.
+
+### Layout Directory: Crafting Universal Aesthetics
+
+The Layout directory serves as a canvas for universal code. Here, I incorporate components that span entire dashboards, such as global sidebars or network request indicators. This centralized approach simplifies the maintenance of common visual elements across the application.
+
+### Modules Directory: Store Management Simplified
+
+The Modules directory encapsulates the application's store. Given the scale of the Birdhouse App, a single store file suffices to manage the state efficiently. This decision streamlines state management, fostering clarity and ease of navigation.
+
+### Pages Directory: Routing through Birdsong
+
+The Pages directory is the gateway to the application's navigable terrain. Pages, accessible through the router, bear the pragmatic suffix "Page" for seamless IDE searches. This simple convention enhances developer experience, allowing for swift page discovery.
+
+### Types Directory: Global Harmony in Definitions
+
+In the Types directory, I house global type definitions. This centralized repository ensures consistent and coherent typing throughout the application, fostering clarity and maintainability.
+
+## Conclusion: Navigating the Skies of Code
+
+The Birdhouse App takes flight as a harmonious symphony of well-thought-out architectural choices, modular design principles, and a touch of playful creativity. As we navigate the skies of code, this avian-inspired venture stands as a testament to the adaptability and resilience embedded in thoughtful software engineering practices.

@@ -3,8 +3,17 @@ import BirdHouse from '~/components/BirdHouse.vue'
 import { useAppStore } from '~/modules'
 
 const appStore = useAppStore()
+const activePage = ref(1)
 
 const birdHouses = computed(() => appStore.birdHouses)
+function changePage(page: number) {
+  activePage.value = page
+}
+
+function fetchBirdHouses(page: number) {
+  appStore.getBirdHouses(page)
+}
+watch(() => activePage.value, fetchBirdHouses)
 </script>
 
 <template>
@@ -14,6 +23,6 @@ const birdHouses = computed(() => appStore.birdHouses)
         <BirdHouse :bird-house="house" />
       </RouterLink>
     </div>
-    <ThePaginator :current-page="2" :total-pages="12" />
+    <ThePaginator :current-page="activePage" :total-pages="50" @change-page="changePage" />
   </div>
 </template>
