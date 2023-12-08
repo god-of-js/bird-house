@@ -12,6 +12,15 @@ pnpm i
 pnpm run dev
 ```
 
+## How to run the using Docker
+
+To  run the project using docker
+
+```
+docker build -t frontend-app .
+docker run -p 8080:80 frontend-app
+```
+
 ## How to test
 
 To test the project use the command
