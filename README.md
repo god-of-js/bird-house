@@ -21,6 +21,8 @@ docker build -t frontend-app .
 docker run -p 8080:80 frontend-app
 ```
 
+After this, the application would be available locally on http://localhost:8080/
+
 ## How to test
 
 To test the project use the command
